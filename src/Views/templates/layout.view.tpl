@@ -28,6 +28,7 @@
       <ul>
         <li><a href="index.php?page=index"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
         <li><a href="index.php?page=sec_login"><i class="fas fa-sign-in-alt"></i>&nbsp;Iniciar Sesión</a></li>
+        <li><a href="index.php?page=Mnt-Clientes"><i class="fas fa-users"></i>&nbsp;Clientes</a></li>
         <li><a href="index.php?page=sec_register"><i class="fas fa-user-plus"></i>&nbsp;Crear Cuenta</a></li>
       </ul>
     </nav>
@@ -36,7 +37,7 @@
   {{{page_content}}}
   </main>
   <footer>
-    <div>Todo los Derechos Reservados 2022 &copy;</div>
+    <div>Todo los Derechos Reservados 2023 &copy;</div>
   </footer>
   {{foreach EndScripts}}
     <script src="/{{~BASE_DIR}}/{{this}}"></script>
