@@ -178,15 +178,13 @@ class Marca extends PublicController{
             if(!$tmpMarcas){
                 throw new Exception("Marca no existe en DB");
             }
-            //$this->viewData["catnom"] = $tmpCategorias["catnom"];
-            //$this->viewData["catest"] = $tmpCategorias["catest"];
             \Utilities\ArrUtils::mergeFullArrayTo($tmpMarcas, $this->viewData);
             $this->viewData["modedsc"] = sprintf(
                 $this->modes[$this->viewData["mode"]],
                 $this->viewData["marca_nom"],
                 $this->viewData["idmarca"]
             );
-            if(in_array($this->viewData["mode"], array("DSP","DEL"))){
+            if(in_array($this->viewData["mode"], array("DEL"))){
                 $this->viewData["readonly"] = "readonly";
             }
             if($this->viewData["mode"] === "DSP") {
