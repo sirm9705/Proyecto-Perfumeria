@@ -139,18 +139,18 @@ class Cliente extends PublicController{
                 break;
             case "UPD":
                 $updated = \Dao\Mnt\Clientes::update(
-                    $this->viewData["clienteid"], 
                     $this->viewData["cliente_nom"],
                     $this->viewData["cliente_email"],
                     $this->viewData["cliente_telefono1"],
                     $this->viewData["cliente_gen"],
                     $this->viewData["cliente_direccion"], 
-                    $this->viewData["cliente_telefono2"]
+                    $this->viewData["cliente_telefono2"],
+                    $this->viewData["clienteid"]
                 );
                 if($updated > 0){
                     \Utilities\Site::redirectToWithMsg(
                         $this->redirectTo,
-                        "Cliente Actualizada Exitosamente"
+                        "Cliente Actualizado Exitosamente"
                     );
                 }
                 break;
