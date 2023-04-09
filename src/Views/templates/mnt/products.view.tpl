@@ -28,7 +28,9 @@
                     <td>{{precio}}</td>
                     <td>{{idmarca}}</td>
                     <td>{{fecha_vencimiento}}</td>
-                    <td>{{img}}</td>
+                    <td>
+                      <img src="{{img}}" width="80px" height=auto>
+                    </td>
                     <td>
                         {{if edit_enabled}}
                             <form action="index.php" method="get">
