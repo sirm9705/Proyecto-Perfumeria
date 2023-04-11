@@ -1,7 +1,7 @@
 <h1>Control de Productos</h1>
-<section class="WWFilter>
+<section class="WWFilter">
 </section>
-<section class="WWList>
+<section class="WWList">
   <table>
         <thead>
             <tr>
@@ -13,9 +13,9 @@
                 <th>Fecha Vencimiento</th>
                 <th>Imagen</th>
                 <th>
-                    {{if new_enabled}}
-                      <button id="btnAdd">Nuevo</button>
-                    {{endif new_enabled}}
+                  {{if new_enabled}}
+                    <button id="btnAdd">Nuevo</button>
+                  {{endif new_enabled}}
                 </th>
             </tr>
         </thead>

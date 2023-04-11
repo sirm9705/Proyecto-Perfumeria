@@ -1,6 +1,6 @@
 <h>{{modedsc}}</h>
 <section>
-  <form action="index.php?page=mnt_product&mode={{mode}}&idproducto={{idproducto}}" method="POST">
+  <form action="index.php?page=mnt_product&mode={{mode}}&idproducto={{idproducto}}" method="POST" class="col-6 col-3-offset">
     <section>
         <label for="idproducto">Codigo</label>
         <input type"hidden" id="idproducto" value="{{idproducto}}"/>
