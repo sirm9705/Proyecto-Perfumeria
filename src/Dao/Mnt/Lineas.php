@@ -3,50 +3,66 @@
 
     use Dao\Table;
 
-    class Lienas extends Table
+    class Lineas extends Table
     {
-        public static function findAll()
+        public static function insert(
+            string $tipo_linea): int
         {
-            $sqlstr = "SELECT * FROM linea";
-            return self::obtenerRegistros($sqlstr,array());
-        }
-
-        public static function findById(int $idlinea){
-            $sqltr = "SELECT * FROM linea where idlinea=:idlinea";
-            $row=self::obtenerUnRegistro(
-                $sqltr,
-                array("idlinea"=>$idlinea));
-            return $row;
-        }
-
-        public static function insert(string $nom_prod, string $desc_prod, float $precio, int $idmarca, string $fecha_vencimiento,$img)
-        {
-            $sqlstr = "INSERT INTO linea (tipo_linea) VALUES (:tipo_linea)";
-            $rowInserted=self::executeNonQuery(
+            $sqlstr = "INSERT INTO linea (tipo_linea) 
+            values(:tipo_linea);";
+            $rowsInserted = self::executeNonQuery(
                 $sqlstr,
                 array(
-                "tipo_ linea"=>$tipo_linea
-            ));
-            return $rowInserted;
+                    "tipo_linea"=>$tipo_linea
+                    )
+            );
+            return $rowsInserted;
         }
-        public static function update(int $idlinea,string $tipo_linea)
-        {
-            $sqlst="UPDATE INTO linea set tipo_linea= :tipo_linea WHERE idlinea=:idlinea";
-            $rowsUpdate = self::executeNonQuery(
-                $sqlst,
+
+        public static function update(
+            string $tipo_linea,
+            int $idlinea
+        ){
+            $sqlstr = "UPDATE linea set 
+                tipo_linea = :tipo_linea  where idlinea=:idlinea;";
+            $rowsUpdated = self::executeNonQuery(
+                $sqlstr,
                 array(
-                    "tipo_linea"=>$tipo_linea,
-                    "idlinea"=>$idlinea
-                ));
-            return $rowsUpdate;
+                    "tipo_linea" => $tipo_linea,
+                    "idlinea" => $idlinea
+                )
+            );
+            return $rowsUpdated;
         }
 
         public static function delete(int $idlinea){
-            $sqlst = "DELETE FROM linea WHERE idlinea=:idlinea";
-            $rowsDelete = self::executeNonQuery(
-                $sqlst,
-                array("idlinea"=>$idlinea));
-            return $rowsDelete;
+            $sqlstr = "DELETE from linea where idlinea=:idlinea;";
+            $rowsDeleted = self::executeNonQuery(
+                $sqlstr,
+                array(
+                    "idlinea" => $idlinea
+                )
+            );
+            return $rowsDeleted;
+        }
+        public static function findAll(){
+            $sqlstr = "SELECT * from linea;";
+            return self::obtenerRegistros($sqlstr, array());
+        }
+        public static function findByFilter(){
+    
+        }
+        public static function findById(int $idlinea){
+            $sqlstr = "SELECT * from linea where idlinea = :idlinea;";
+            $row = self::obtenerUnRegistro(
+                $sqlstr,
+                array(
+                    "idlinea"=> $idlinea
+                )
+            );
+            return $row;
         }
     }
-?>
+    ?>
+
+
