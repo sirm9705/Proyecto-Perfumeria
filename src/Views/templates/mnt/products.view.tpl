@@ -21,7 +21,7 @@
            {{foreach products}}
                 <tr>
                     <td>{{idproducto}}</td>
-                    <td><a href="index.php?page=Mnt-Product&mode=DISP&idproducto={{idproducto}}">{{nom_prod}}</a></td>
+                    <td><a href="index.php?page=mnt_product&mode=DSP&idproducto={{idproducto}}">{{nom_prod}}</a></td>
                     <td>{{desc_prod}}</td>
                     <td>{{precio}}</td>
                     <td>{{idmarca}}</td>

@@ -1,42 +1,49 @@
-<h>{{modedsc}}</h>
-<section>
+<h1>{{modedsc}}</h1>
+<section class="row">
   <form action="index.php?page=mnt_product&mode={{mode}}&idproducto={{idproducto}}" method="POST" class="col-6 col-3-offset">
-    <section>
+    <section class="row">
         <label for="idproducto">Codigo</label>
         <input type"hidden" id="idproducto" value="{{idproducto}}"/>
         <input type="text" readonly name="clientiddummy" value="{{idproducto}}"/>
     </section>
-    <section>
+
+    <section class="row">
         <label for="nom_prod">Producto</label>
         <input type="text" {{readonly}} name="nom_prod" value="{{nom_prod}}" maxlength="50">
-        {{if "nom_prod_error"}}
-            <span class="error">{{"nom_prod_error"}}</span>
-        {{endif "nom_prod_error"}}
+        {{if nom_prod_error}}
+            <span class="error">{{nom_prod_error}}</span>
+        {{endif nom_prod_error}}
     </section>
-    <section>
-        <label for="ndesc_prod">Descripcion</label>
+
+    <section class="row">
+        <label for="desc_prod">Descripcion</label>
         <input type="text" {{readonly}} name="desc_prod" value="{{desc_prod}}" maxlength="255">
     </section>
-    <section>
+
+    <section class="row">
         <label for="precio">Precio</label>
         <input type="text" {{readonly}} name="precio" value="{{precio}}">
-        {{if "precio_error"}}
-            <span class="error">{{"precio_error"}}</span>
-        {{endif "precio_error"}}
+        {{if precio_error}}
+            <span class="error">{{precio_error}}</span>
+        {{endif precio_error}}
     </section>
-    <section>
+
+    <section class="row">
        <label for="idmarca">Marca</label>
        <select id="idmarca" name="idmarca" {{if readonly}}disabled{{endif readonly}}>
-          {{foreach marcas}}
-             <option value="{{idmarca}}">{{marca_nom}}</option>
-          {{endfor marcas}}
+            <option>Eligir Marca</option>
+             while(marcas){
+                <option value={{idmarca}}>{{marca_nom}}</option>
+             }
        </select>
     </section>
-    <section>
+
+    <section class="row">
         <label for="fecha_vencimiento">Fecha Vencimiento</label>
         <input type="datetime-local" id="fecha_vencimiento" value={{fecha_vencimiento}}>
     </section>
-    <section>
+
+    <section class="row">
         <label for="img">Imagen</label>
         <div id="img">
             <input type="file" type="file" id="img" name="img">
@@ -65,7 +72,7 @@
       document.getElementById("btnCancelar").addEventListener("click", function(e){
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_product");
+        window.location.assign("index.php?page=mnt_products");
       });
   });
 </script>
