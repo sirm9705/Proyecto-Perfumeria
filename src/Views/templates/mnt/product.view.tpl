@@ -32,9 +32,7 @@
        <label for="idmarca">Marca</label>
        <select id="idmarca" name="idmarca" {{if readonly}}disabled{{endif readonly}}>
             <option>Eligir Marca</option>
-             while(marcas){
-                <option value={{idmarca}}>{{marca_nom}}</option>
-             }
+            <option value="1" {{idmarca}}>Elizabeth Arden</option>
        </select>
     </section>
 
