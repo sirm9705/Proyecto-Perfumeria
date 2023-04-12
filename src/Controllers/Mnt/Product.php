@@ -5,7 +5,7 @@
     use Views\Renderer;
 
     class Product extends PublicController{
-        private $redirecTo = "index.php?page=Mnt-Products";
+        private $redirecTo = "index.php?page=mnt_products";
         private $viewData = array(
             "mode"=>"DSP",
             "modedsc"=>"",
@@ -24,8 +24,8 @@
             "readonly"=>false
         );
         private $modes = array(
-            "DISP" => "Detalle de %s (%s)",
-            "INS" => "Nuevo Cliente",
+            "DSP" => "Detalle de %s (%s)",
+            "INS" => "Nuevo Producto",
             "UPD" => "Editar %s (%s)",
             "DEL" => "Borrar %s (%s)"
         );
@@ -66,7 +66,7 @@
             }
             if($this->viewData["mode"] !== "INS")
             {
-                if(isset($_GET['cidproducto'])){
+                if(isset($_GET['idproducto'])){
                     $this->viewData["idproducto"]=intval($_GET["idproducto"]);
                 }else{
                     throw  new Exception("Id not Found on Query Params");
@@ -87,7 +87,7 @@
             if(isset($_POST["precio"])){
                 if(\Utilities\Validators::IsEmpty($_POST["precio"])){
                     $this->viewData["has_errors"]=true;
-                    $this->viewData["nprecio_error"]="El precio no puede ir vacio";
+                    $this->viewData["precio_error"]="El precio no puede ir vacio";
                 }
             }else{
                 throw new Exception("precio not present in form");
