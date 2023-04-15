@@ -29,7 +29,12 @@
     <section class="row">
       <label for="idproducto" class="col-4">Id de Producto</label>
       <input type="text" {{readonly}} name="idproducto" value="{{idproducto}}" maxlength="45" placeholder="Id de Producto"/>
+      {{if idproducto_error}}
+        <span class="error col-12">{{idproducto_error}}</span>
+      {{endif idproducto_error}}
     </section>
+
+    
 
     {{if has_errors}}
         <section>

@@ -21,13 +21,13 @@
       {{foreach stocks}}
       <tr>
         <td>{{idstock}}</td>
-        <td><a href="index.php?page=Mnt_Stock&mode=DSP&idstock={{idstock}}">{{cantidad}}</a></td>
+        <td><a href="index.php?page=mnt_stock&mode=DSP&idstock={{idstock}}">{{cantidad}}</a></td>
         <td>{{estado}}</td>
         <td>{{idproducto}}</td>
         <td>
           {{if ~edit_enabled}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="Mnt_Stock"/>
+             <input type="hidden" name="page" value="mnt_stock"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="idstock" value={{idstock}} />
               <button type="submit">Editar</button>
@@ -35,7 +35,7 @@
           {{endif ~edit_enabled}}
           {{if ~delete_enabled}}
           <form action="index.php" method="get">
-             <input type="hidden" name="page" value="Mnt_Stock"/>
+             <input type="hidden" name="page" value="mnt_stock"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="idstock" value={{idstock}} />
               <button type="submit">Eliminar</button>

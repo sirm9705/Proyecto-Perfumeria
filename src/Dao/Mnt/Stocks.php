@@ -6,7 +6,7 @@ use Dao\Table;
 
  */
 /**
- * Class Stocks
+ * Undocumented class
  */
 class Stocks extends Table{
     /**
@@ -37,7 +37,7 @@ class Stocks extends Table{
             array(
                 "cantidad" => $cantidad,
                 "estado" => $estado,
-                "idproducti" => $idproducto,
+                "idproducto" => $idproducto,
                 "idstock" => $idstock
             )
         );
@@ -59,7 +59,7 @@ class Stocks extends Table{
     }
     
     public static function findById(int $idstock){
-        $sqlstr = "SELECT * from categorias where idstock = :idstock;";
+        $sqlstr = "SELECT * from stock where idstock = :idstock;";
         $row = self::obtenerUnRegistro(
             $sqlstr,
             array(
